@@ -43,7 +43,7 @@
                     <a class="nav-link page-scroll" href="#contact">Kontak</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn-outline-sm" href="login.html">Masuk</a>
+                    <a class="btn-outline-sm" href="{{ route('login') }}">Masuk</a>
 
                 </li>
             </ul>
@@ -64,15 +64,15 @@
                         <div class="text-container">
                             <h1>APLIKASI UNTUK <br><span id="js-rotating">OLAHRAGAWAN, PENGELOLA, SEMUA</span></h1>
                             <p class="p-large">GERAKO adalah aplikasi reservasi dan manajemen sarana olahraga. Segera daftarkan dirimu untuk menikmati bagaimana serunya berolahraga bersama GERAKO !</p>
-                            <a class="btn-solid-lg page-scroll" href="register.html">Daftar</a>
-                            <a class="btn-outline-lg page-scroll" href="login.html">Masuk</a>
+                            <a class="btn-solid-lg page-scroll" href="{{ route('register') }}">Daftar</a>
+                            <a class="btn-outline-lg page-scroll" href="{{ route('login') }}">Masuk</a>
                             <!-- <a class="btn-solid-lg page-scroll" href="#"><i class="fab fa-google-play"></i>PLAY STORE</a> -->
                         </div>
                     </div>
                     <!-- end of col -->
                     <div class="col-lg-6">
                         <div class="image-container">
-                            <img class="img-fluid" src="{{ asset('images/header_gerako.png  ') }}" alt="alternative">
+                            <img class="img-fluid" src="{{ asset('images/header_gerako.png') }}" alt="alternative">
                         </div>
                         <!-- end of image-container -->
                     </div>
