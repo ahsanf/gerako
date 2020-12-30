@@ -234,8 +234,9 @@
                                                             <table class="table table-hover">
                                                                 <thead>
                                                                     <tr>
+                                                                        <th width="5%">No</th>
                                                                         <th>
-                                                                            <div class="chk-option">
+                                                                            {{-- <div class="chk-option">
                                                                                 <div class="checkbox-fade fade-in-primary">
                                                                                     <label class="check-task">
                                                                                     <input type="checkbox" value="">
@@ -244,7 +245,7 @@
                                                                                         </span>
                                                                                 </label>
                                                                                 </div>
-                                                                            </div>
+                                                                            </div> --}}
                                                                             Nama Pemesan</th>
                                                                         <th>Tim</th>
                                                                         <th>Lapangan</th>
@@ -254,10 +255,12 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                    <?php $no=1; ?>
                                                                     @foreach ($schedule->slice(0, 4) as $s)
                                                                     <tr>
+                                                                        <td><?php echo $no++;?></td>
                                                                         <td>
-                                                                            <div class="chk-option">
+                                                                            {{-- <div class="chk-option">
                                                                                 <div class="checkbox-fade fade-in-primary">
                                                                                     <label class="check-task">
                                                                                     <input type="checkbox" value="">
@@ -266,7 +269,7 @@
                                                                                             </span>
                                                                                 </label>
                                                                                 </div>
-                                                                            </div>
+                                                                            </div> --}}
                                                                             <div class="d-inline-block align-middle">
                                                                                 <img src="assets/images/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
                                                                                 <div class="d-inline-block">
@@ -290,7 +293,7 @@
                                                                 </tbody>
                                                             </table>
                                                             <div class="text-right m-r-20">
-                                                                <a href="#!" class=" b-b-primary text-primary">Lihat Semua Jadwal</a>
+                                                                <a href="{{ route('schedule') }}" class=" b-b-primary text-primary">Lihat Semua Jadwal</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -321,7 +324,7 @@
                                                         </div>
                                                         @endforeach
                                                         <div class="text-center">
-                                                            <a href="#!" class="b-b-primary text-primary">Lihat Semua Member</a>
+                                                            <a href="{{ route('member') }}" class="b-b-primary text-primary">Lihat Semua Member</a>
                                                         </div>
                                                     </div>
                                                 </div>

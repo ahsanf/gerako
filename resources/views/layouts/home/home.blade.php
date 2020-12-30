@@ -37,7 +37,7 @@
                     <a class="nav-link page-scroll" href="#features">Fitur</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="about-gerako.html">Tentang</a>
+                    <a class="nav-link page-scroll" href="{{ route('about') }}">Tentang</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Kontak</a>

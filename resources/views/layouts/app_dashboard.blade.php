@@ -22,10 +22,10 @@
 
         <!-- Favicon icon -->
         <link rel="icon" href="{{ asset('images/fav.png') }}">
-            {{-- DataTable --}}
-        <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/buttons.bootstrap4.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/select.bootstrap4.min.css') }}">
+
+
+
+
         <!-- Google font-->
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
         <!-- waves.css -->
@@ -45,6 +45,11 @@
         <!-- Style.css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
         {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"> --}}
+
+        {{-- DataTable --}}
+        <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/buttons.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/select.bootstrap4.min.css') }}">
 
 
 

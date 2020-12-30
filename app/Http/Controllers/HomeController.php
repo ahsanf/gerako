@@ -16,6 +16,7 @@ class HomeController extends Controller
         //
         return view('layouts.home.home');
     }
+    
 
     /**
      * Show the form for creating a new resource.

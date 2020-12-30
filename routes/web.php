@@ -26,5 +26,10 @@ Route::middleware(['auth:sanctum', 'verified'])
 
 Route::get('/', [HomeController::class,'index' ])->name('home');
 
+Route::get('/about', function(){
+    return view('layouts.about');
+})->name('about');
+
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule')->middleware(['auth:sanctum', 'verified']);
 Route::get('/member', [TeamController::class, 'index'])->name('member')->middleware(['auth:sanctum', 'verified']);
+// Route::post('logout', 'Api\AuthController@logout')->name('logout');

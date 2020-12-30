@@ -192,11 +192,11 @@
                                             <!-- task, page, download counter  end -->
 
 
-\
+
                                             <div class="col-xl-12 col-md-12">
                                                 <div class="card ">
                                                     <div class="card-header">
-                                                        <h5>Member Baru</h5>
+                                                        <h5>Member</h5>
                                                         <div class="card-header-right">
                                                             <ul class="list-unstyled card-option">
                                                                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -208,16 +208,31 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-block">
-                                                        @foreach ($team as $t )
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>{{ $t->name }}</h6>
-                                                                <p class="text-muted m-b-0">Tim</p>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>No</th>
+                                                                        <th>Nama</th>
+                                                                    </tr>
 
+                                                                </thead>
+                                                                <tbody>
+                                                                    <?php $no=1; ?>
+                                                                    @foreach ($team as $t )
+                                                                    <tr>
+                                                                        <td width="5%"><?php echo $no++; ?></td>
+                                                                        <td> <img src="assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                                                       <div class="d-inline-block">
+                                                                              <h6>{{ $t->name }}</h6>
+                                                                            <p class="text-muted m-b-0">Tim</p>
+                                                                        </div></td>
+                                                                    </tr>
+                                                                    @endforeach
+                                                                </tbody>
+
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -237,6 +252,7 @@
 
 
 @include('layouts.script_dashboard')
+
 </body>
 
 </html>

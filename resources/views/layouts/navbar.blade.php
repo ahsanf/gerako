@@ -110,12 +110,17 @@
                             <li class="waves-effect waves-light">
                                 <a href="email-inbox.html">
                                     <i class="ti-email"></i> Pesan
+                                </a>
                             </li>
 
                             <li class="waves-effect waves-light">
-                                <a href="{{ route('logout') }}">
-                                    <i class="ti-layout-sidebar-left"></i> Keluar
-                                </a>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <a href="{{ route('logout') }}"  onclick="event.preventDefault(); this.closest('form').submit();"> <i class="ti-layout-sidebar-left"></i> Keluar</a>
+
+                                </form>
+
                             </li>
                         </ul>
                     </li>
@@ -179,7 +184,6 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </nav>

@@ -212,26 +212,13 @@
                                                             <table id="schedule_table" class="table table-hover">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>No</th>
-                                                                        <th>
-                                                                            {{-- <div class="chk-option">
-                                                                                <div class="checkbox-fade fade-in-primary">
-                                                                                    <label class="check-task">
-                                                                                    <input type="checkbox" value="">
-                                                                                    <span class="cr">
-                                                                                            <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                        </span>
-                                                                                </label>
-                                                                                </div>
-                                                                            </div> --}}
-                                                                            Nama Pemesan</th>
+                                                                        <th width="5%">No</th>
+                                                                        <th>Nama Pemesan</th>
                                                                         <th>Tim</th>
                                                                         <th>Tanggal</th>
                                                                         <th>Lapangan</th>
-
                                                                         <th>Jam</th>
-
-                                                                        <th class="text-right">Status</th>
+                                                                        <th class="text-center">Status</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -253,7 +240,7 @@
                                                                         <td>{{ $s->date }}</td>
                                                                         <td>{{ $s->field_id }}</td>
                                                                         <td>{{ $s->time }}</td>
-                                                                        <td class="text-right">
+                                                                        <td width="10%"  class="text-center" >
                                                                             @if ($s->status == 0)
                                                                             <label class="label label-danger">Belum Lunas</label>
                                                                             @else
@@ -286,11 +273,11 @@
 
 
 @include('layouts.script_dashboard')
-<script>
+{{-- <script>
     $(document).ready( function () {
     $('#schedule_table').DataTable();
 } );
-</script>
+</script> --}}
 </body>
 
 </html>
