@@ -262,7 +262,7 @@
                                     </div>
                                     <!-- Page-body end -->
                                 </div>
-                                <div id="styleSelector"> </div>
+
                             </div>
                         </div>
                     </div>
@@ -273,11 +273,16 @@
 
 
 @include('layouts.script_dashboard')
-{{-- <script>
+<script>
     $(document).ready( function () {
     $('#schedule_table').DataTable();
+
 } );
-</script> --}}
+var sheet = document.createElement('style')
+sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;}";
+document.body.appendChild(sheet);
+
+</script>
 </body>
 
 </html>

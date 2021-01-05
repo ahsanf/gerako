@@ -1,5 +1,10 @@
 @include('layouts.app_dashboard')
 <body>
+    <div class="fixed-button active">
+        <a href="#" data-toggle="modal" data-target="#exampleModal"  class="btn btn-md btn-primary">
+        <i class="fa fa-plus" aria-hidden="true"></i> Tambah Member
+        </a>
+        </div>
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="loader-track">
@@ -194,7 +199,7 @@
 
 
                                             <div class="col-xl-12 col-md-12">
-                                                <div class="card ">
+                                                <div class="card table-card">
                                                     <div class="card-header">
                                                         <h5>Member</h5>
                                                         <div class="card-header-right">
@@ -206,10 +211,11 @@
                                                                 <li><i class="fa fa-trash close-card"></i></li>
                                                             </ul>
                                                         </div>
+
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="table-responsive">
-                                                            <table class="table table-hover">
+                                                            <table id="member_table" class="table table-hover">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>No</th>
@@ -225,7 +231,13 @@
                                                                         <td> <img src="assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
                                                                        <div class="d-inline-block">
                                                                               <h6>{{ $t->name }}</h6>
-                                                                            <p class="text-muted m-b-0">Tim</p>
+                                                                            <p class="text-muted m-b-0">
+                                                                                @if($t->type == 1)
+                                                                                  Tim
+                                                                                @else
+                                                                                   Individu
+                                                                                @endif
+                                                                        </p>
                                                                         </div></td>
                                                                     </tr>
                                                                     @endforeach
@@ -241,7 +253,6 @@
                                     </div>
                                     <!-- Page-body end -->
                                 </div>
-                                <div id="styleSelector"> </div>
                             </div>
                         </div>
                     </div>
@@ -250,9 +261,65 @@
         </div>
     </div>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Tambah Member Baru</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form action="{{ route('member.store') }}" method="post">
+                @csrf
+                <div class="form-group">
+                  <label for="member-name" class="col-form-label">Nama Member</label>
+                  <input type="text" class="form-control" name="name" id="member-name">
+                </div>
+
+                <div class="form-group">
+                    <p class="col-form-label">Tipe Member</p>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="1"> Tim
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="type" value="2"> Individu
+                      </label>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="submit"  class="btn btn-primary">Tambah Member</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
 
 @include('layouts.script_dashboard')
 
 </body>
+<script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+
+})
+
+    $(document).ready( function () {
+    $('#member_table').DataTable();
+
+} );
+var sheet = document.createElement('style')
+sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;}";
+document.body.appendChild(sheet);
+
+
+</script>
 
 </html>

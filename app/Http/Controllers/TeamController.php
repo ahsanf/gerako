@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use UxWeb\SweetAlert\SweetAlert;
 
 class TeamController extends Controller
 {
@@ -37,7 +39,16 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+       Team::create([
+            'name' => $request->name,
+            'type' => $request->type
+        ]);
+
+        SweetAlert::success('Success Message', 'Berhasil');
+
+        return redirect()->route('member.index');
+
     }
 
     /**

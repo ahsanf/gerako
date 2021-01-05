@@ -178,7 +178,7 @@
                             </a>
                         </li>
                         <li class="{{ (request()->is('member*')) ? 'active' : '' }}">
-                            <a href="{{ route('member') }}" class="waves-effect waves-dark">
+                            <a href="{{ route('member.index') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="ti-calendar"></i><b>D</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Member</span>
                                 <span class="pcoded-mcaret"></span>

@@ -324,7 +324,7 @@
                                                         </div>
                                                         @endforeach
                                                         <div class="text-center">
-                                                            <a href="{{ route('member') }}" class="b-b-primary text-primary">Lihat Semua Member</a>
+                                                            <a href="{{ route('member.index') }}" class="b-b-primary text-primary">Lihat Semua Member</a>
                                                         </div>
                                                     </div>
                                                 </div>

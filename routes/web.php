@@ -31,5 +31,7 @@ Route::get('/about', function(){
 })->name('about');
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule')->middleware(['auth:sanctum', 'verified']);
-Route::get('/member', [TeamController::class, 'index'])->name('member')->middleware(['auth:sanctum', 'verified']);
+Route::resource('member', TeamController::class)->middleware(['auth:sanctum', 'verified']);
+// Route::get('/member', [TeamController::class, 'index'])->name('member')->middleware(['auth:sanctum', 'verified']);
+// Route::post('/member/store',[TeamController::class, 'store'])->name('store')->middleware(['auth:sanctum', 'verified']);
 // Route::post('logout', 'Api\AuthController@logout')->name('logout');
