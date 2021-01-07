@@ -47,7 +47,7 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <a href="index.html"><img class="login100-pic-img-2" src="images/logo_blue.svg" alt="IMG"></a>
+                    <a href="{{ route('home') }}"><img class="login100-pic-img-2" src="images/logo_blue.svg" alt="IMG"></a>
 
                 </div>
 
