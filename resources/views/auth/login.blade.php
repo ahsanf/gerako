@@ -1,6 +1,7 @@
 
 
 @include('layouts.app_2')
+@include('notification')
 <body>
 
     <div class="limiter">
@@ -32,11 +33,13 @@
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <input class="input100" placeholder="Password" type="password" name="password" required autocomplete="current-password">
+
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
                     </div>
+            
                             <button class="container-login100-form-btn" type="submit">
                                 <span class="login100-form-btn">Masuk</span>
                             </button>

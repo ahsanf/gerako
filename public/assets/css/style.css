@@ -228,6 +228,7 @@ strong {
 
 .card .card-header .card-header-left {
     display: inline-block;
+    marign-left: 200px;
 }
 
 .card .card-header .card-header-right {

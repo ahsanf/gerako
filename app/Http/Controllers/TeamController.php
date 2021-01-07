@@ -45,9 +45,7 @@ class TeamController extends Controller
             'type' => $request->type
         ]);
 
-        SweetAlert::success('Success Message', 'Berhasil');
-
-        return redirect()->route('member.index');
+        return redirect()->route('member.index')->with('message','Member Berhasil Ditambah');
 
     }
 

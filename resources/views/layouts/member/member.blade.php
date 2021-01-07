@@ -1,10 +1,9 @@
 @include('layouts.app_dashboard')
 <body>
-    <div class="fixed-button active">
-        <a href="#" data-toggle="modal" data-target="#exampleModal"  class="btn btn-md btn-primary">
-        <i class="fa fa-plus" aria-hidden="true"></i> Tambah Member
-        </a>
-        </div>
+@include('notification')
+
+
+
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="loader-track">
@@ -202,14 +201,19 @@
                                                 <div class="card table-card">
                                                     <div class="card-header">
                                                         <h5>Member</h5>
+                                                        <div class="card-header-left"></div>
+
                                                         <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
+                                                            <a href="#" data-toggle="modal" id="btn_member"data-target="#exampleModal"  class="btn btn-sm btn-primary">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i> Tambah Member
+                                                                </a>
+                                                            {{-- <ul class="list-unstyled card-option">
                                                                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
                                                                 <li><i class="fa fa-window-maximize full-card"></i></li>
                                                                 <li><i class="fa fa-minus minimize-card"></i></li>
                                                                 <li><i class="fa fa-refresh reload-card"></i></li>
                                                                 <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
+                                                            </ul> --}}
                                                         </div>
 
                                                     </div>
@@ -219,7 +223,10 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th>No</th>
-                                                                        <th>Nama</th>
+                                                                        <th width="20%">Nama</th>
+                                                                        <th width="10%">Tipe Member</th>
+                                                                        <th class="text-center"width="10%">Status</th>
+                                                                        <th class="text-center" width="2%">Aksi</th>
                                                                     </tr>
 
                                                                 </thead>
@@ -231,14 +238,35 @@
                                                                         <td> <img src="{{ asset('assets/images/avatar.jpg') }}" alt="user image" class="img-radius img-40 align-top m-r-15">
                                                                        <div class="d-inline-block">
                                                                               <h6>{{ $t->name }}</h6>
-                                                                            <p class="text-muted m-b-0">
-                                                                                @if($t->type == 1)
-                                                                                  Tim
-                                                                                @else
-                                                                                   Individu
-                                                                                @endif
-                                                                        </p>
                                                                         </div></td>
+                                                                        <td> @if($t->type == 1)
+                                                                            Tim
+                                                                          @else
+                                                                             Individu
+                                                                          @endif
+                                                                  </p></td>
+                                                                  <td class="text-center">@if($t->status == 1)
+                                                                    <label class="label label-success">Aktif</label>
+                                                                  @else
+                                                                  <label class="label label-danger">Tidak Aktif</label>
+                                                                  @endif</td>
+                                                                  <td class="text-right">
+                                                                    <div class="dropdown">
+                                                                        <a class="btn btn-sm btn-icon-only" href="#" role="button"
+                                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                            {{-- <i class="fa fa-ellipsis-v" aria-hidden="true"></i> --}}
+
+                                                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+
+                                                                        </a>
+                                                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                                            <form>
+                                                                                <a class="dropdown-item" href="#">Edit</a>
+                                                                                <a class="dropdown-item" href="#">Hapus</a>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
                                                                     </tr>
                                                                     @endforeach
                                                                 </tbody>
@@ -306,6 +334,7 @@
 
 </body>
 <script>
+
     $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
 
@@ -317,9 +346,8 @@
 } );
 
 var sheet = document.createElement('style')
-sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;}";
+sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;} div.dataTables_wrapper div.dataTables_filter{padding-top:20px;}div.dataTables_wrapper div.dataTables_length label {padding-top:20px;}.card .card-header .card-header-right { right: 10px; top: 10px; display: inline-block; float: right; padding: 0px 0; position: absolute;}.card .card-header .card-header-right i { color: #ffffff; margin:0 4px;}";
 document.body.appendChild(sheet);
-
 
 </script>
 

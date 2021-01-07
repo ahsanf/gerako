@@ -219,6 +219,7 @@
                                                                         <th>Lapangan</th>
                                                                         <th>Jam</th>
                                                                         <th class="text-center">Status</th>
+                                                                        <th class="text-center">Aksi</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -246,6 +247,23 @@
                                                                             @else
                                                                             <label class="label label-success">Lunas</label>
                                                                             @endif
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <div class="dropdown">
+                                                                                <a class="btn btn-sm btn-icon-only" href="#" role="button"
+                                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                    {{-- <i class="fa fa-ellipsis-v" aria-hidden="true"></i> --}}
+
+                                                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+
+                                                                                </a>
+                                                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                                                    <form>
+                                                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                                                        <a class="dropdown-item" href="#">Hapus</a>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
                                                                         </td>
                                                                     </tr>
                                                                     @endforeach
@@ -279,7 +297,8 @@
 
 } );
 var sheet = document.createElement('style')
-sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;}";
+// sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;}";
+sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;} div.dataTables_wrapper div.dataTables_filter{padding-top:20px;}div.dataTables_wrapper div.dataTables_length label {padding-top:20px;}";
 document.body.appendChild(sheet);
 
 </script>
