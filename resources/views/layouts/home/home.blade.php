@@ -43,8 +43,11 @@
                     <a class="nav-link page-scroll" href="#contact">Kontak</a>
                 </li>
                 <li class="nav-item">
+                    @guest
                     <a class="btn-outline-sm" href="{{ route('login') }}">Masuk</a>
-
+                    @else
+                    <a class="btn-outline-sm" href="{{ route('dashboard') }}">Dashboard</a>
+                    @endguest
                 </li>
             </ul>
 

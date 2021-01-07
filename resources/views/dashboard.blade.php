@@ -271,7 +271,7 @@
                                                                                 </div>
                                                                             </div> --}}
                                                                             <div class="d-inline-block align-middle">
-                                                                                <img src="assets/images/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                                                                <img src="{{ asset('assets/images/avatar.jpg') }}" alt="user image" class="img-radius img-40 align-top m-r-15">
                                                                                 <div class="d-inline-block">
                                                                                     <h6>{{ $s->ordered_by }}</h6>
                                                                                     <p class="text-muted m-b-0"> <a href="http://wa.me/{{ $s->phone }}">Kirim Pesan</a></p>
@@ -316,7 +316,7 @@
                                                     <div class="card-block">
                                                         @foreach ($team->slice(0, 5) as $t )
                                                         <div class="align-middle m-b-30">
-                                                            <img src="assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                                            <img src="{{ asset('assets/images/avatar.jpg') }}" alt="user image" class="img-radius img-40 align-top m-r-15">
                                                             <div class="d-inline-block">
                                                                 <h6>{{ $t->name }}</h6>
                                                                 <p class="text-muted m-b-0">Tim</p>

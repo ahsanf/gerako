@@ -228,7 +228,7 @@
                                                                     @foreach ($team as $t )
                                                                     <tr>
                                                                         <td width="5%"><?php echo $no++; ?></td>
-                                                                        <td> <img src="assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                                                        <td> <img src="{{ asset('assets/images/avatar.jpg') }}" alt="user image" class="img-radius img-40 align-top m-r-15">
                                                                        <div class="d-inline-block">
                                                                               <h6>{{ $t->name }}</h6>
                                                                             <p class="text-muted m-b-0">
@@ -315,6 +315,7 @@
     $('#member_table').DataTable();
 
 } );
+
 var sheet = document.createElement('style')
 sheet.innerHTML = "div.table-responsive>div.dataTables_wrapper>div.row>div[class^='col-']:last-child {padding-right: 20px;}";
 document.body.appendChild(sheet);

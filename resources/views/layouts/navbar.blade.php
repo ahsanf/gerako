@@ -58,7 +58,7 @@
                             </li>
                             <li class="waves-effect waves-light">
                                 <div class="media">
-                                    <img class="d-flex align-self-center img-radius" src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                                    <img class="d-flex align-self-center img-radius" src="{{ asset('assets/images/avatar.jpg') }}" alt="Generic placeholder image">
                                     <div class="media-body">
                                         <h5 class="notification-user">{{ Auth::user()->name }}</h5>
                                         <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -68,7 +68,7 @@
                             </li>
                             <li class="waves-effect waves-light">
                                 <div class="media">
-                                    <img class="d-flex align-self-center img-radius" src="assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                    <img class="d-flex align-self-center img-radius" src="{{ asset('assets/images/avatar.jpg') }}" alt="Generic placeholder image">
                                     <div class="media-body">
                                         <h5 class="notification-user">Joseph William</h5>
                                         <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -90,7 +90,7 @@
                     </li>
                     <li class="user-profile header-notification">
                         <a href="#!" class="waves-effect waves-light">
-                            <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                            <img src="{{ asset('assets/images/avatar.jpg') }}" class="img-radius" alt="User-Profile-Image">
                             <span>{{ Auth::user()->name }}
 
                             </span>
@@ -136,7 +136,7 @@
                 <div class="pcoded-inner-navbar main-menu">
                     <div class="">
                         <div class="main-menu-header">
-                            <img class="img-80 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                            <img class="img-80 img-radius" src="{{ asset('assets/images/avatar.jpg') }}" alt="User-Profile-Image">
                             <div class="user-details">
                                 <span id="more-details">{{ Auth::user()->name }}<i class="fa fa-caret-down"></i></span>
                             </div>
@@ -163,7 +163,7 @@
                     </div>
 
                     <ul class="pcoded-item pcoded-left-item">
-                        <li class="{{ (request()->is('dashboard*')) ? 'active' : '' }}">
+                        <li class="{{ ( request()->is('dashboard*')) ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
@@ -179,7 +179,7 @@
                         </li>
                         <li class="{{ (request()->is('member*')) ? 'active' : '' }}">
                             <a href="{{ route('member.index') }}" class="waves-effect waves-dark">
-                                <span class="pcoded-micon"><i class="ti-calendar"></i><b>D</b></span>
+                                <span class="pcoded-micon"><i class="ti-user"></i><b>D</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.dash.main">Member</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>

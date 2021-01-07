@@ -48,7 +48,7 @@
                         </span>
                         @if (Route::has('password.request'))
                         <a class="txt2" href="{{ route('password.request') }}">
-							Username / Password?
+							Password ?
                         </a>
                         @endif
                     </div>

@@ -229,7 +229,7 @@
                                                                         <td>
 
                                                                             <div class="d-inline-block align-middle">
-                                                                                <img src="assets/images/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                                                                <img src="{{ asset('assets/images/avatar.jpg') }}" alt="user image" class="img-radius img-40 align-top m-r-15">
                                                                                 <div class="d-inline-block">
                                                                                     <h6>{{ $s->ordered_by }}</h6>
                                                                                     <p class="text-muted m-b-0"> <a href="http://wa.me/{{ $s->phone }}">Kirim Pesan</a></p>
