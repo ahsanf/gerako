@@ -8,15 +8,16 @@
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
                     <a href="{{ route('home') }}"><img class="login100-pic-img" src="{{ asset('images/logo_blue.svg') }}" alt="IMG"></a>
-
+                    @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-center text-green-600">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                 </div>
-                @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {{ session('status') }}
-                </div>
 
 
-             @endif
+
+
 
                 <form method="POST" action="{{ route('password.email') }}" class="login100-form validate-form">
                     @csrf
@@ -46,7 +47,7 @@
                         </span>
 
                         <a class="txt2" href="{{ route('login') }}">
-							Masuk ke GERAKO
+							<b>Masuk ke GERAKO</b>
                         </a>
 
                     </div>

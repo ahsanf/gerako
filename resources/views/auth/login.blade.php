@@ -10,12 +10,17 @@
                 <div class="login100-pic js-tilt" data-tilt>
                     <a href="{{ route('home') }}"><img class="login100-pic-img" src="{{ asset('images/logo_blue.svg') }}" alt="IMG"></a>
 
+                        <x-jet-validation-errors class="alert-toast inherit bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm" id="alert"/>
+
+                    @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-green-600">
+                        {{ session('status') }}
+                    </div>
+                 @endif
                 </div>
-                @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {{ session('status') }}
-                </div>
-             @endif
+
+
+
 
                 <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
                     @csrf
@@ -32,14 +37,19 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" placeholder="Password" type="password" name="password" required autocomplete="current-password">
+                        <input id="password"class="input100" placeholder="Password" type="password" name="password" required autocomplete="current-password">
 
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+
                     </div>
-            
+                    <div class="text-right">
+
+                        <input type="checkbox" onclick="showPassword()"> <span class="txt2">Tampilkan Password</span>
+
+                    </div>
                             <button class="container-login100-form-btn" type="submit">
                                 <span class="login100-form-btn">Masuk</span>
                             </button>
@@ -51,7 +61,7 @@
                         </span>
                         @if (Route::has('password.request'))
                         <a class="txt2" href="{{ route('password.request') }}">
-							Password ?
+							<b>Password ?</b>
                         </a>
                         @endif
                     </div>
@@ -61,8 +71,8 @@
 							Belum Punya Akun ?
                         </span>
                         <a class="txt2" href="{{ route('register') }}">
-							Buat Akun
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+							<b>Buat Akun
+                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i></b>
 						</a>
                     </div>
                 </form>
@@ -70,7 +80,22 @@
         </div>
     </div>
     @include('layouts.script')
+    <script>
+        function showPassword() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
 
+        $('#alert').load(function(){
+             $('.alert-toast inherit bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm').fadeOut();
+        });
+
+
+    </script>
 </body>
 
 </html>

@@ -42,13 +42,26 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Kontak</a>
                 </li>
+                @guest
+
                 <li class="nav-item">
-                    @guest
+
                     <a class="btn-outline-sm" href="{{ route('login') }}">Masuk</a>
-                    @else
-                    <a class="btn-outline-sm" href="{{ route('dashboard') }}">Dashboard</a>
-                    @endguest
+
                 </li>
+                @else
+                    <li class="nav-item">
+
+                        <a class="nav-link page-scroll" href="{{ route('dashboard') }}">Dashboard</a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a href="{{ route('logout') }}"  onclick="event.preventDefault(); this.closest('form').submit();" class="nav-link page-scroll" >Logout</a>
+
+                    </li>
+                @endguest
+
             </ul>
 
 

@@ -1,46 +1,4 @@
-{{-- <x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout> --}}
 @include('layouts.app_2')
 <body>
     <div class="limiter">
@@ -48,7 +6,13 @@
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
                     <a href="{{ route('home') }}"><img class="login100-pic-img-2" src="images/logo_blue.svg" alt="IMG"></a>
+                    <x-jet-validation-errors class="alert-toast inherit bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm" id="alert"/>
 
+                    @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-green-600">
+                        {{ session('status') }}
+                    </div>
+                 @endif
                 </div>
 
                 <form class="login100-form validate-form"  method="POST" action="{{ route('register') }}">
@@ -87,9 +51,14 @@
                         </span>
 
                     </div>
-                    <div class="text-left">
+                    <div class="text-right">
+
+                        <input type="checkbox" onclick="showPassword()"> <span class="txt2">Tampilkan Password</span>
+
+                    </div>
+                    <div class="text-left p-t-40"">
                         <input type="checkbox" class="checkbox" name="check" id="checkbox">
-                        <label class="txt3">Dengan membuat akun, Anda menyetujui <a class="txt2 text-left" href="#">Persyaratan & Privasi kami.</a></label>
+                        <label class="txt3">Dengan membuat akun, Anda menyetujui <a class="txt2" href="#"><b>Persyaratan & Privasi kami.</b></a></label>
 
                     </div>
                     <div class="container-login100-form-btn">
@@ -100,7 +69,7 @@
                     <div class="text-center p-t-136">
                         <span class="txt2">Sudah punya akun ?</span>
                         <a class="txt2" href="{{ route('login') }}">
-							Masuk
+							<b>Masuk</b>
 							<i class="fa fa-long-arrow-right m-l-5 " aria-hidden="true "></i>
 						</a>
                     </div>
@@ -112,4 +81,20 @@
     </div>
 @include('layouts.script')
 
+<script>
+    function showPassword() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+        var x = document.getElementById("password_confirmation");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 </body>
